@@ -8,12 +8,12 @@
 import Foundation
 
 protocol PopularMoviesView: class {
+    var presenter : PopularMoviesPresenter?{ get set }
     func showIndicator()
     func hideIndicator()
     func featchingDataSuccess()
     func showError(error: String)
     func showSuccess()
-    func navigateToMoviesDetailsScreen(id: Int)
 }
 
 protocol PopularMoviesCellView {
@@ -22,3 +22,5 @@ protocol PopularMoviesCellView {
     func displayReleaseDate(_ date: String)
     func displayVoteAverage(_ Vote: String)
 }
+
+
