@@ -14,7 +14,7 @@ extension MovieDetailsViewController: MovieDetailsView {
     func pathData(model: MovieDetailsPathDataModel) {
         backgroundMovieImage.kf.setImage(with: "\(ImageURl.imageURL)\(model.backgroundMovieImage ?? "")".asUrl)
         posterMovieImage.kf.setImage(with: "\(ImageURl.imageURL)\(model.posterMovieImage ?? "")".asUrl)
-        peopleWatchingNumberLabel.text = model.peopleWatchingTitleLabel
+        peopleWatchingNumberLabel.text = model.peopleWatchingNumberLabel
         genresLable.text = model.genresLable
         overviewMovie.text = model.overviewMovie
         movieNameTitle.text = model.movieNameTitle

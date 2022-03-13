@@ -12,9 +12,6 @@ class MovieDetailsPresenter {
     private var dataFromApi:MovieDetailsModel?
     {
         didSet{
-            //            let integerPart =
-            //            let fractionalPart = dataFromApi?.voteAverage?.fractionalPart()
-            //            view?.moveName(name: dataFromApi?.originalTitle ?? "nodata", title1: integerPart!, title2: "." + fractionalPart!)
             pathData()
         }
     }
@@ -48,21 +45,35 @@ class MovieDetailsPresenter {
     
     
     func pathData() {
-        var data = MovieDetailsPathDataModel()
         
+        let names = dataFromApi?.genres.map{$0.compactMap{$0.name}}
+        guard let name = names else { return}
+        let formattedArray = name.joined(separator: ",")
+        
+        var data = MovieDetailsPathDataModel()
         data.movieNameTitle = dataFromApi?.originalTitle
         data.backgroundMovieImage = dataFromApi?.backdropPath
         data.posterMovieImage = dataFromApi?.posterPath
         data.peopleWatchingNumberLabel = "\(dataFromApi?.runtime ?? 0)"
+        data.genresLable = formattedArray
         data.overviewMovie = dataFromApi?.overview
-        data.productionCompaniesLabel = "Production Companies "
         data.voteAverageIntegerPart = dataFromApi?.voteAverage?.integerPart()
         data.voteAverageFractionalPart = ".\(dataFromApi?.voteAverage?.fractionalPart() ?? "")"
-        
         view?.pathData(model: data)
+    }
+    
+    func configure(cell: ProductionCompaniesCollectionCellView, for index: Int) {
         
         
+        let productionCompanies = dataFromApi?.productionCompanies
+        
+       // cell.setCompanyLogoPath(productionCompanies?[index].logoPath ?? "")
+        //print(productionCompanies?[index].logoPath ?? "")
+        
+//        cell.setCompanyName(dataFromApi?.productionCompanies?.map{$0.name}[index] ?? "")
+//        cell.setCompanyOriginCountry(dataFromApi?.productionCompanies?.map{$0.originCountry}[index] ?? "")
         
     }
+
     
 }

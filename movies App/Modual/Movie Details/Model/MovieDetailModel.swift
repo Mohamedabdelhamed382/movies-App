@@ -39,7 +39,7 @@ struct MovieDetailsModel: Codable {
         case originalTitle = "original_title"
         case overview, popularity
         case posterPath = "poster_path"
-        case productionCompanies
+        case productionCompanies = "production_companies"
         case productionCountries
         case releaseDate
         case revenue, runtime

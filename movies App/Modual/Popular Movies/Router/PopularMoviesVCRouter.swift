@@ -10,7 +10,6 @@ import UIKit
 
 class PopularMoviesVCRouter {
     
-    
     class func  createpopularMoviesVC() -> UIViewController {
         let popularMoviesView  = PopularMoviesViewController() as PopularMoviesView
         let router = PopularMoviesVCRouter()

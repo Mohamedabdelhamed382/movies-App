@@ -25,7 +25,7 @@ extension MovieDetailsViewController:UICollectionViewDelegate,UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductionCompaniesCollectionViewCell", for: indexPath)
-        //presenter.configure(cell: cell as! PopularMoviesCellView, for: indexPath.row)
+        presnter?.configure(cell: cell as! ProductionCompaniesCollectionCellView, for: indexPath.row)
         return cell
     }
     

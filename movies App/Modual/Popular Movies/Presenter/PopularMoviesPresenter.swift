@@ -37,7 +37,6 @@ class PopularMoviesPresenter {
                 self.data = data?.results
                 self.view?.featchingDataSuccess()
                 self.view?.showSuccess()
-
             }
 
         }
