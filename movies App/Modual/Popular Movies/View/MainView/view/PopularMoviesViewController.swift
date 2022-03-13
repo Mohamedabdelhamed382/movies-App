@@ -11,13 +11,13 @@ class PopularMoviesViewController: UIViewController {
     
     @IBOutlet weak var collctionView:UICollectionView!
     
-    var presenter: PopularMoviesPresenter!
+    var presenter: PopularMoviesPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = PopularMoviesPresenter(view: self)
-        presenter.viewDidLoad()
+       //presenter = PopularMoviesPresenter(view: self)
+        presenter?.viewDidLoad()
         registerCell()
         configure()
     }

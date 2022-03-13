@@ -9,10 +9,7 @@ import Foundation
 import ProgressHUD
 
 extension PopularMoviesViewController : PopularMoviesView {
-    func navigateToMoviesDetailsScreen(id: Int) {
-        navigationController?.pushViewController(MoviesDetailsViewController(), animated: true)
-    }
-    
+   
     func showSuccess() {
         ProgressHUD.showSuccess()
     }

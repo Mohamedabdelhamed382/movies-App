@@ -12,7 +12,7 @@ extension ApiService {
     func fetchPopularMovies(complation: @escaping (PopularMovies?,Error?,ErrorResponse?) -> Void) {
         var url = URLComponents(string: BaseURLs.baseUrl + Route.popular)
         url?.queryItems = [URLQueryItem(name: ApiKey.apiKey, value:  ApiKey.apiValue)]
-        ApiService.Shared.fetchData(URL: url?.url as! URLConvertible, params: nil, headers: nil, method: .get) { (popularMovies:PopularMovies?, errorResponse: ErrorResponse?, error) in
+        fetchData(URL: url?.url as! URLConvertible, params: nil, headers: nil, method: .get) { (popularMovies:PopularMovies?, errorResponse: ErrorResponse?, error) in
             if let error = error {
                 complation(nil,error,nil)
             }else if let error = errorResponse {

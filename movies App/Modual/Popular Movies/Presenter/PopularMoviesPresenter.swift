@@ -11,10 +11,14 @@ class PopularMoviesPresenter {
     
     private weak var view :PopularMoviesView?
     private var data = PopularMovies().results
-    
-    init(view: PopularMoviesView) {
+    private let router:PopularMoviesVCRouter
+
+    init(view: PopularMoviesView?, router:PopularMoviesVCRouter  ) {
          self.view = view
+        self.router = router
     }
+    
+    
     
     func viewDidLoad(){
         bindingData()
@@ -33,9 +37,9 @@ class PopularMoviesPresenter {
                 self.data = data?.results
                 self.view?.featchingDataSuccess()
                 self.view?.showSuccess()
-                
+
             }
-            
+
         }
     }
     
@@ -52,8 +56,8 @@ class PopularMoviesPresenter {
     }
     
     func didSelectItem(index: Int) {
-        let cellData = data?[index]
-        view?.navigateToMoviesDetailsScreen(id: cellData?.id ?? 0)
+        let id = data?[index].id ?? 0
+        router.navigateToMovieDetailsScreen(forom: view!, id: id)
     }
     
 }
