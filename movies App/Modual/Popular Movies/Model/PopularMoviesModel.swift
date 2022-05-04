@@ -27,7 +27,6 @@ struct Result: Codable {
     var backdropPath: String?
     var genreIDS: [Int]?
     var id: Int?
-    var originalLanguage: OriginalLanguage?
     var originalTitle, overview: String?
     var popularity: Double?
     var posterPath, releaseDate, title: String?
@@ -40,7 +39,6 @@ struct Result: Codable {
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id
-        case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview, popularity
         case posterPath = "poster_path"
@@ -49,11 +47,4 @@ struct Result: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-}
-
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case fr = "fr"
-    case hi = "hi"
-    case ja = "ja"
 }

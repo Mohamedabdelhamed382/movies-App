@@ -37,7 +37,6 @@ class PopularMoviesPresenter {
                 self.data = data?.results
                 self.view?.featchingDataSuccess()
                 self.view?.showSuccess()
-
             }
 
         }
@@ -59,5 +58,4 @@ class PopularMoviesPresenter {
         let id = data?[index].id ?? 0
         router.navigateToMovieDetailsScreen(forom: view!, id: id)
     }
-    
 }
